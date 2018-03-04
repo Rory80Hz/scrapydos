@@ -5,7 +5,7 @@ class DosOpsSpider(scrapy.Spider):
 
     def start_requests(self):
         baseurl = 'https://www.digitalmarketplace.service.gov.uk/digital-outcomes-and-specialists/opportunities/'
-        for x in range(0,3000):
+        for x in range(0,9000):
             yield scrapy.Request(url=baseurl + str(x), callback=self.parse)
 
     def parse(self, response):
