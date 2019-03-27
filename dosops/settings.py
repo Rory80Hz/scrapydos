@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+    # -*- coding: utf-8 -*-
 
 # Scrapy settings for dosops project
 #
@@ -20,6 +20,8 @@ NEWSPIDER_MODULE = 'dosops.spiders'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
+
+LOG_LEVEL = 'WARNING'
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32

@@ -5,7 +5,7 @@ class DosOpsSpider(scrapy.Spider):
 
     def start_requests(self):
         baseurl = 'https://www.digitalmarketplace.service.gov.uk/digital-outcomes-and-specialists/opportunities/'
-        for x in range(0,9000):
+        for x in range(9000,9500):
             yield scrapy.Request(url=baseurl + str(x), callback=self.parse)
 
     def parse(self, response):
@@ -21,6 +21,7 @@ class DosOpsSpider(scrapy.Spider):
             else:
                 entry = entry + '|'
         entry = entry + '|' + response.url  + '\n'
-        with open(filename, 'a') as f:
+        self.logger.warning(entry)
+        with open(filename, 'ab') as f:
             f.write(entry.encode('utf-8'))
         self.log('Saved file %s' % filename)
